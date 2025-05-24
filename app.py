@@ -24,18 +24,6 @@ genai_key = (
     or DEFAULT_API_KEY                          # ③ ค่านี้ถ้า ①-② ไม่พบ
 )
 
-# กล่องกรอกหากอยากสลับ Key ตอนรัน
-genai_key = st.text_input(
-    "🔑 GENAI_API_KEY (แก้ได้ถ้าจะสลับ key)",
-    value=genai_key,
-    type="password",
-    help="ปล่อยว่างถ้าใช้ค่าที่ตั้งไว้แล้ว",
-)
-
-if not genai_key:
-    st.error("❗ จำเป็นต้องมี GENAI_API_KEY เพื่อเรียกใช้งาน Gemini API")
-    st.stop()
-
 client = genai.Client(api_key=genai_key)
 
 # ── 2. IMAGE UPLOADER ──────────────────────────────────────────────────────
