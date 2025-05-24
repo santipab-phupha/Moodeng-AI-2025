@@ -74,7 +74,7 @@ if st.button("✨ Generate Caption & English Male-Tone Voice", use_container_wid
 
             # 3-C. create English TTS (ลอง accent อินเดีย ซึ่งมักเป็นเสียงชาย)
             with st.spinner("🔊 Synthesising voice…"):
-                tts = gTTS(text=caption, lang="en", tld="co.in", slow=False)
+                tts = gTTS(text=caption, lang="en", tld="co.uk", slow=False)
                 tmp_mp3 = tempfile.NamedTemporaryFile(delete=False, suffix=".mp3")
                 tts.save(tmp_mp3.name)
 
