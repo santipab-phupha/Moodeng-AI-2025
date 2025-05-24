@@ -7,9 +7,10 @@
 
 ## 🎥 Demo CapMoo
 
-[![CapMoo Demo](https://img.youtube.com/vi/YOUR_VIDEO_ID/hqdefault.jpg)](https://www.youtube.com/watch?v=YOUR_VIDEO_ID)
+[![Watch a Demo Video CapMoo](./Cap-Moo-Demo.gif)](./Cap-Moo-Demo.mp4)
 
-> Click on the clip to see the AI ​​system in action, which can describe animal behavior with emotion.
+> 🔊 Click on the image to watch the full video! 
+> An AI system that can describe animal behavior with context, ideal for museums or zoos.
 
 
 
