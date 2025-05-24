@@ -11,13 +11,6 @@ CapMoo performs only API-based inference—there is no local training.
 - **CO₂ per Caption:**  
   0.002 kWh × 0.442 kg CO₂e/kWh = **0.000884 kg CO₂e** per generated caption.  
 
-### Efficiency Measures
-
-- **Edge Filtering:**  
-  NVIDIA Jetson Nano filters out ~40% of empty or blurred frames before API calls.  
-- **Batching Requests:**  
-  We batch captions in groups of 20, reducing per-caption overhead by ~20%.  
-
 ### Quarterly & Annual Emissions
 
 - **Monthly Volume:** 10,000 captions  
@@ -27,4 +20,3 @@ CapMoo performs only API-based inference—there is no local training.
 ### Offsetting & Future Roadmap
 
 - **Carbon Offsets:** We purchase Renewable Energy Certificates (RECs) equal to **150 kg CO₂e/year**.  
-- **Hardware Optimization:** Roadmap to deploy on-device inference via Jetson Xavier NX to eliminate cloud calls—projected to cut emissions by ~90%.
