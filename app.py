@@ -7,7 +7,7 @@ import tempfile
 import base64
 
 st.set_page_config(page_title="GenAI Image Captioning", layout="centered")
-st.title("🖼️ GenAI Image Captioning & Speech (Thai)")
+st.title("🦛 Moodeng Captioning & Speech (Thai) 🖼️")
 
 # —– LOAD OR INPUT YOUR API KEY —–
 genai_key = None
