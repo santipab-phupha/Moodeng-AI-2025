@@ -1,4 +1,4 @@
-google
-gtts
-tempfile
-base
+google-genai 
+Pillow 
+matplotlib 
+gTTS
