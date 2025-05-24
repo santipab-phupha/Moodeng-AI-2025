@@ -7,11 +7,9 @@
 
 ## 🎥 Demo CapMoo
 
-[![Wacth a Demo Video](https://img.shields.io/badge/▶️_ดูวิดีโอสาธิต-CapMoo-blue?style=for-the-badge)](./Cap-Moo-Demo.mp4)
+[![Watching CapMoo on YouTube](https://img.youtube.com/vi/pf30HgmidVw/hqdefault.jpg)](https://youtu.be/pf30HgmidVw)
 
-
-> 🔊 Click on the image to watch the full video! 
-> An AI system that can describe animal behavior with context, ideal for museums or zoos.
+> Click on the image above to watch a video demonstrating the AI ​​system describing animal behavior.
 
 
 
