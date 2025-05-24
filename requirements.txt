@@ -1,0 +1,4 @@
+google
+gtts
+tempfile
+base
