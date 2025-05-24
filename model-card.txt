@@ -1,0 +1,7 @@
+Model Details: CapMoo v1.0, Gemini Flash 2.0, Launched on May 14, 2024, can be used 1500 times per day.
+Intended Use: Real-time behavioral captions for zoo exhibits and mobile guides. Not for clinical ethology studies.
+Prompt Engineering: Try to set the result to be like the host in TikTok who is promoting moodeng.
+Evaluation: Compared to many LLMs in Thailand by observing the results and evaluating them by the testers themselves.
+Factors: Image clarity, lighting, animal occlusion can degrade performance.
+Ethics & Sustainability: Batches inference to minimize API calls; carbon offset via renewable credits.
+Contact: santipabppch12345@gmail.com
