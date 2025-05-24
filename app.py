@@ -1,7 +1,9 @@
 # moodeng_captioning.py
 # -------------------------------------------------
-# Streamlit + Gemini + gTTS (UK-male voice) demo
+# Streamlit + Gemini + gTTS (male-like English voice) demo
 # -------------------------------------------------
+# ⚠️ หมายเหตุ: การใส่ API Key ตรง ๆ ในไฟล์ไม่ปลอดภัย
+#  - ควรย้ายไปใช้ secrets.toml หรือ ตัวแปร ENV สำหรับโปรดักชัน
 
 import os
 import streamlit as st
@@ -13,20 +15,30 @@ import tempfile, base64
 st.set_page_config(page_title="GenAI Image Captioning", layout="centered")
 st.title("🦛 Moodeng Captioning (Thai) 🖼️")
 
-# ── 1. LOAD GENAI KEY ────────────────────────────
-api_key = "AIzaSyBFLvVpnJaTRlRz-yiZGrafiRb11C-6Bfk"
-#   ③ Manual box    →   ask user
-genai_key = st.secrets.get("AIzaSyBFLvVpnJaTRlRz-yiZGrafiRb11C-6Bfk", "")
-genai_key = genai_key or os.getenv("AIzaSyBFLvVpnJaTRlRz-yiZGrafiRb11C-6Bfk", "")
+# ── 1. LOAD / FALLBACK GENAI KEY ───────────────────────────────────────────
+DEFAULT_API_KEY = "AIzaSyBFLvVpnJaTRlRz-yiZGrafiRb11C-6Bfk"   # ← ใส่ค่าเริ่มต้นที่นี่
+
+genai_key = (
+    st.secrets.get("GENAI_API_KEY", "")         # ① secrets.toml → [general] GENAI_API_KEY="AIza…"
+    or os.getenv("GENAI_API_KEY", "")           # ② ตัวแปร ENV  → export GENAI_API_KEY=AIza…
+    or DEFAULT_API_KEY                          # ③ ค่านี้ถ้า ①-② ไม่พบ
+)
+
+# กล่องกรอกหากอยากสลับ Key ตอนรัน
+genai_key = st.text_input(
+    "🔑 GENAI_API_KEY (แก้ได้ถ้าจะสลับ key)",
+    value=genai_key,
+    type="password",
+    help="ปล่อยว่างถ้าใช้ค่าที่ตั้งไว้แล้ว",
+)
+
 if not genai_key:
-    genai_key = st.text_input("🔑 Enter your GENAI_API_KEY", type="password", placeholder="AIzaSy…")
-if not genai_key:
-    st.error("❗ Please provide a GENAI_API_KEY then rerun.")
+    st.error("❗ จำเป็นต้องมี GENAI_API_KEY เพื่อเรียกใช้งาน Gemini API")
     st.stop()
 
-client = genai.Client(api_key="AIzaSyBFLvVpnJaTRlRz-yiZGrafiRb11C-6Bfk")
+client = genai.Client(api_key=genai_key)
 
-# ── 2. IMAGE UPLOADER ────────────────────────────
+# ── 2. IMAGE UPLOADER ──────────────────────────────────────────────────────
 uploaded = st.file_uploader("📂 Upload an image", type=("jpg", "jpeg", "png"))
 if not uploaded:
     st.info("โปรดอัปโหลดภาพก่อนเริ่มใช้งาน")
@@ -35,8 +47,8 @@ if not uploaded:
 img = Image.open(uploaded)
 st.image(img, use_column_width=True)
 
-# ── 3. CAPTION + TTS ─────────────────────────────
-if st.button("✨ Generate Caption & English Male Voice", use_container_width=True):
+# ── 3. CAPTION + TTS ───────────────────────────────────────────────────────
+if st.button("✨ Generate Caption & English Male-Tone Voice", use_container_width=True):
     with st.spinner("⚡ Generating caption…"):
         try:
             # 3-A. upload image to Gemini
@@ -60,13 +72,13 @@ if st.button("✨ Generate Caption & English Male Voice", use_container_width=Tr
             caption = resp.text.strip()
             st.markdown(f"**💬 Caption:** {caption}")
 
-            # 3-C. create English TTS (deep male, UK)
+            # 3-C. create English TTS (ลอง accent อินเดีย ซึ่งมักเป็นเสียงชาย)
             with st.spinner("🔊 Synthesising voice…"):
                 tts = gTTS(text=caption, lang="en", tld="co.in", slow=False)
                 tmp_mp3 = tempfile.NamedTemporaryFile(delete=False, suffix=".mp3")
                 tts.save(tmp_mp3.name)
 
-                # embed audio & autoplay - playbackRate ≈ 1.25 for punchier tone
+                # embed audio & autoplay – playbackRate ≈ 1.25 ให้โทนฟัง-หนาขึ้น
                 with open(tmp_mp3.name, "rb") as f:
                     audio_b64 = base64.b64encode(f.read()).decode()
                 audio_html = f"""
