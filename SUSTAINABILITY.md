@@ -1,6 +1,6 @@
 ## AI Model Footprint & Sustainability
 
-CapMoo performs only API-based inference—there is no local training.
+CapMoo performs only API-based inference there is no local training.
 
 ### Inference Energy & Emissions
 
