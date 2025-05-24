@@ -7,5 +7,9 @@
 
 ## 🎥 Demo CapMoo
 
-[![Play Video](https://img.shields.io/badge/▶️_ดูวิดีโอสาธิต-CapMoo-blue?style=for-the-badge)](./Cap-Moo-Demo.mp4)
+<video controls width="100%">
+  <source src="Cap-Moo-Demo.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
 
