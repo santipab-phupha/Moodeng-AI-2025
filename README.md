@@ -7,9 +7,9 @@
 
 ## 🎥 Demo CapMoo
 
-<video controls width="100%">
-  <source src="Cap-Moo-Demo.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+[![CapMoo Demo](https://img.youtube.com/vi/YOUR_VIDEO_ID/hqdefault.jpg)](https://www.youtube.com/watch?v=YOUR_VIDEO_ID)
+
+> Click on the clip to see the AI ​​system in action, which can describe animal behavior with emotion.
+
 
 
