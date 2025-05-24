@@ -14,7 +14,7 @@ st.set_page_config(page_title="GenAI Image Captioning", layout="centered")
 st.title("🦛 Moodeng Captioning (Thai) 🖼️")
 
 # ── 1. LOAD GENAI KEY ────────────────────────────
-#   ① secrets.toml →   [genai] api_key = "AIza…"
+[genai] api_key = "AIzaSyBFLvVpnJaTRlRz-yiZGrafiRb11C-6Bfk"
 #   ③ Manual box    →   ask user
 genai_key = st.secrets.get("AIzaSyBFLvVpnJaTRlRz-yiZGrafiRb11C-6Bfk", "")
 genai_key = genai_key or os.getenv("AIzaSyBFLvVpnJaTRlRz-yiZGrafiRb11C-6Bfk", "")
@@ -62,7 +62,7 @@ if st.button("✨ Generate Caption & English Male Voice", use_container_width=Tr
 
             # 3-C. create English TTS (deep male, UK)
             with st.spinner("🔊 Synthesising voice…"):
-                tts = gTTS(text=caption, lang="en", tld="co.uk", slow=False)
+                tts = gTTS(text=caption, lang="en", tld="co.in", slow=False)
                 tmp_mp3 = tempfile.NamedTemporaryFile(delete=False, suffix=".mp3")
                 tts.save(tmp_mp3.name)
 
