@@ -10,7 +10,7 @@ st.set_page_config(page_title="GenAI Image Captioning", layout="centered")
 st.title("🦛 Moodeng Captioning (Thai) 🖼️")
 
 # —– LOAD OR INPUT YOUR API KEY —–
-genai_key = None
+genai_key = "AIzaSyBFLvVpnJaTRlRz-yiZGrafiRb11C-6Bfk"
 # 1) Try Streamlit secrets
 try:
     genai_key = st.secrets["AIzaSyBFLvVpnJaTRlRz-yiZGrafiRb11C-6Bfk"]
