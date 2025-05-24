@@ -15,10 +15,9 @@ st.title("🦛 Moodeng Captioning (Thai) 🖼️")
 
 # ── 1. LOAD GENAI KEY ────────────────────────────
 #   ① secrets.toml →   [genai] api_key = "AIza…"
-#   ② OS env        →   export GENAI_API_KEY=AIza…
 #   ③ Manual box    →   ask user
-genai_key = st.secrets.get("GENAI_API_KEY", "")
-genai_key = genai_key or os.getenv("GENAI_API_KEY", "")
+genai_key = st.secrets.get("AIzaSyBFLvVpnJaTRlRz-yiZGrafiRb11C-6Bfk", "")
+genai_key = genai_key or os.getenv("AIzaSyBFLvVpnJaTRlRz-yiZGrafiRb11C-6Bfk", "")
 if not genai_key:
     genai_key = st.text_input("🔑 Enter your GENAI_API_KEY", type="password", placeholder="AIzaSy…")
 if not genai_key:
