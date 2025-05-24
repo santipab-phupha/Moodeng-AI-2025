@@ -24,7 +24,7 @@ if not genai_key:
     st.error("❗ Please provide a GENAI_API_KEY then rerun.")
     st.stop()
 
-client = genai.Client(api_key=genai_key)
+client = genai.Client(api_key="AIzaSyBFLvVpnJaTRlRz-yiZGrafiRb11C-6Bfk")
 
 # ── 2. IMAGE UPLOADER ────────────────────────────
 uploaded = st.file_uploader("📂 Upload an image", type=("jpg", "jpeg", "png"))
