@@ -14,7 +14,7 @@ st.set_page_config(page_title="GenAI Image Captioning", layout="centered")
 st.title("🦛 Moodeng Captioning (Thai) 🖼️")
 
 # ── 1. LOAD GENAI KEY ────────────────────────────
-[genai] api_key = "AIzaSyBFLvVpnJaTRlRz-yiZGrafiRb11C-6Bfk"
+api_key = "AIzaSyBFLvVpnJaTRlRz-yiZGrafiRb11C-6Bfk"
 #   ③ Manual box    →   ask user
 genai_key = st.secrets.get("AIzaSyBFLvVpnJaTRlRz-yiZGrafiRb11C-6Bfk", "")
 genai_key = genai_key or os.getenv("AIzaSyBFLvVpnJaTRlRz-yiZGrafiRb11C-6Bfk", "")
