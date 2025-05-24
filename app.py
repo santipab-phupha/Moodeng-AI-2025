@@ -36,7 +36,7 @@ img = Image.open(uploaded)
 st.image(img, use_column_width=True)
 
 # ── 3. CAPTION + TTS ───────────────────────────────────────────────────────
-if st.button("✨ Generate Caption & English Male-Tone Voice", use_container_width=True):
+if st.button("✨ Generate Caption & English Voice 🎙️", use_container_width=True):
     with st.spinner("⚡ Generating caption…"):
         try:
             # 3-A. upload image to Gemini
