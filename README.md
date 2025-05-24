@@ -1,8 +1,9 @@
 ## 🚀 Moodeng Innovation Demo (CapMoo) 🦛
 
-✨ พบกับระบบ AI บรรยายพฤติกรรมสัตว์แบบเรียลไทม์ ✨  
-ลองใช้งานได้ที่นี่เลย 👇  
+✨ Meet the AI ​​system that describes animal behavior in real time. ✨  
+Try it demo here. 👇  
 
+[![Click to Moodeng Captioning](https://img.shields.io/badge/🦛_ทดลองใช้ระบบ_CAPMOO-5cb85c?style=for-the-badge)](https://capmoo-innovation.streamlit.app/)
 
 https://github.com/user-attachments/assets/055880b1-bb3a-4cf8-8648-9ab0be22b776
 
